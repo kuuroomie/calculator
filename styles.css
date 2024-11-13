@@ -1,0 +1,132 @@
+/* styles.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-color: #AEE8FF; /* Baby blue background */
+    margin: 0;
+}
+
+.calculator {
+    background-color: #F8C8DC; /* Soft pink background */
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center everything horizontally */
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #5D3F6B; /* Darker shade for the text */
+}
+
+.display {
+    width: 85%; /* Reduced width */
+    height: 45px;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    text-align: center; /* Justified text */
+    padding-right: 15px;
+    border: 2px solid #FFD3E6; /* Light pink border */
+    border-radius: 10px;
+    background-color: #fff;
+    color: #5D3F6B; /* Darker text color for readability */
+    padding-left: 10px;
+}
+
+.display::placeholder {
+    color: #B68B9A; /* Light grey placeholder */
+}
+
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 85%; /* Match the width of the buttons to the display */
+}
+
+button {
+    font-size: 1.1rem;
+    padding: 20px;
+    border: none;
+    background-color: #FFD3E6; /* Light pink button color */
+    color: #5D3F6B; /* Darker button text color */
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 100%; /* Ensure buttons take up full width */
+}
+
+button:hover {
+    background-color: #AEE8FF; /* Baby blue on hover */
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+#scientific-buttons {
+    grid-column: span 4;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+/* Responsive Design */
+
+/* Phone Screens */
+@media (max-width: 600px) {
+    .calculator {
+        padding: 15px;
+        width: 95%;
+        font-size: 0.9rem;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    button, input {
+        width: 100%;
+    }
+    button {
+        font-size: 1rem;
+        padding: 18px;
+    }
+}
+
+/* Tablet or Half-Screen Width */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .calculator {
+        width: 75%;
+        padding: 20px;
+    }
+    h1 {
+        font-size: 1.7rem;
+    }
+    button {
+        font-size: 1.1rem;
+    }
+}
+
+/* Laptop Width and Up */
+@media (min-width: 1025px) {
+    .calculator {
+        width: 50%;
+        max-width: 600px;
+        padding: 30px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    p, #message {
+        font-size: 1.2rem;
+    }
+}
